@@ -9,4 +9,10 @@ from Bio.PDB.Structure import Structure
 parser = PDBParser()
 st_1ehz = parser.get_structure('my structure','D:\\Python27\\Programs\\1EHZ.pdb')
 
-PDB.extract(st_1ehz, 'A', 26, 44, 'D:\\Python27\\Programs\\1EHZ_anticodon.pdb')
+for res in st_1ehz[0]['A']:
+        if res.id[1] not in range(26,45):
+                print res.id[1]
+                st_1ehz[0]['A'].detach_child(res.id)
+out = PDBIO()
+out.set_structure(st_1ehz)
+out.save('1EHZ_anticodon.pdb')
