@@ -11,7 +11,6 @@ st_1ehz = parser.get_structure('my structure','D:\\Python27\\Programs\\1EHZ.pdb'
 
 for res in st_1ehz[0]['A']:
         if res.id[1] not in range(26,45):
-                print res.id[1]
                 st_1ehz[0]['A'].detach_child(res.id)
 out = PDBIO()
 out.set_structure(st_1ehz)
