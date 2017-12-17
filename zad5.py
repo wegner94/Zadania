@@ -15,7 +15,6 @@ backbone_list = []
 backbone2_list = []
 
 # Z jakiegoś powodu jednokrotne usunięcie atomów nie kasuje wszystkich. Stąd pętla. 
-
 for i in range(1,5):
     for res in st_1ehz[0]['A']:
         for at in res:
